@@ -1,0 +1,15 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>disable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\PERFISOFT.VENTASPLATFORM.DOMAIN\PERFISOFT.VENTASPLATFORM.DOMAIN.csproj" />
+    <ProjectReference Include="..\PERFISOFT.VENTASPLATFORM.INFRASTRUCTURE.COMMON\PERFISOFT.VENTASPLATFORM.INFRASTRUCTURE.COMMON.csproj" />
+    <ProjectReference Include="..\PERFISOFT.VENTASPLATFORM.SEEDWORK\PERFISOFT.VENTASPLATFORM.SEEDWORK.csproj" />
+  </ItemGroup>
+
+</Project>

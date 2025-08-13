@@ -1,0 +1,6 @@
+@PERFISOFT.VENTASPLATFORM.API_HostAddress = http://localhost:5151
+
+GET {{PERFISOFT.VENTASPLATFORM.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

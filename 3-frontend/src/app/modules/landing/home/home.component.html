@@ -1,0 +1,700 @@
+<div class="relative flex flex-col flex-auto min-w-0 overflow-hidden">
+    <!-- Header mejorado con menú hamburguesa -->
+    <header class="sticky top-0 z-30 border-b border-[#E1E1E1] dark:bg-gray-800">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <!-- Logo -->
+                <div class="flex items-center gap-2">
+                    <a href="https://perfisoft.com/" target="_blank"
+                        class="flex flex-shrink-0 items-center space-x-2 duration-300 md:hover:scale-95">
+                        <span class="sr-only">Inicio</span>
+                        <img src="https://res.cloudinary.com/dvzkgpiv3/image/upload/v1744479552/VentasPlatformDemo/Landing/rehucrjhddu6h49se46e.png"
+                            alt="Logo de PERFISOFT" class="h-10 w-auto md:h-12" width="35" height="35" />
+                    </a>
+                </div>
+                <!-- Botón hamburguesa -->
+                <div class="md:hidden">
+                    <button (click)="toggleMobileMenu()"
+                        class="text-gray-700 dark:text-white focus:outline-none focus:ring-2 focus:ring-primary p-2 rounded">
+                        <svg *ngIf="!mobileMenuOpen" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor" class="w-7 h-7">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                        <svg *ngIf="mobileMenuOpen" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor" class="w-7 h-7">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+                <!-- Navegación de escritorio -->
+                <div class="hidden md:flex items-center gap-8 xl:gap-12">
+                    <a href="https://perfisoft.com/" target="_blank"
+                        class="text-gray-800 dark:text-gray-100 hover:text-white hover:bg-primary focus:ring-2 focus:ring-primary rounded-lg px-5 py-3 font-semibold text-lg transition duration-300 ease-in-out transition duration-200 transform hover:scale-105">
+                        Acerca de Nosotros
+                    </a>
+                    <a href="https://perfisoft.com/contacto" target="_blank"
+                        class="text-gray-800 dark:text-gray-100 hover:text-white hover:bg-primary focus:ring-2 focus:ring-primary rounded-lg px-5 py-3 font-semibold text-lg transition duration-300 ease-in-out transition duration-200 transform hover:scale-105">
+                        Sistema Personalizado
+                    </a>
+                </div>
+                <!-- Acción de usuario escritorio -->
+                <div class="hidden md:flex items-center gap-4">
+                    <a (click)="scrollToPrecio()"
+                        class="text-white bg-primary focus:outline-none focus:ring-2 focus:ring-primary rounded-lg px-5 py-3 font-semibold text-lg transition duration-300 ease-in-out transition duration-200 transform hover:scale-105">
+                        ¡Conocer Precio!
+                    </a>
+                </div>
+            </div>
+
+            <!-- Menú móvil -->
+            <div *ngIf="mobileMenuOpen" class="md:hidden flex flex-col gap-4 py-4">
+                <a href="https://perfisoft.com/" target="_blank"
+                    class="block text-gray-800 dark:text-gray-100 hover:bg-primary hover:text-white rounded-lg px-4 py-2 font-semibold transition">
+                    Acerca de Nosotros
+                </a>
+                <a href="https://perfisoft.com/contacto/" target="_blank"
+                    class="block text-gray-800 dark:text-gray-100 hover:bg-primary hover:text-white rounded-lg px-4 py-2 font-semibold transition">
+                    Sistema Personalizado
+                </a>
+                <a href="https://wa.link/0yghxs" target="_blank"
+                    class="block text-gray-800 dark:text-gray-100 hover:bg-primary hover:text-white rounded-lg px-4 py-2 font-semibold transition duration-200 transform hover:scale-105">
+                    ¡Comprar ahora!
+                </a>
+            </div>
+        </div>
+    </header>
+    <!-- Hero Section (Encabezado principal) -->
+    <div class="bg-white relative pt-8   sm:pb-20 px-6 sm:px-16 overflow-hidden">
+        <div class="flex flex-col sm:flex-row items-center justify-between">
+            <!-- Contenedor de título y descripción -->
+            <div class="w-full sm:w-1/2">
+                <!-- Título principal -->
+                <h1 class="text-5xl sm:text-7xl font-extrabold tracking-tight leading-tight text-left">
+                    Sistema Punto de Venta Para Desarrolladores y Emprendedores 
+                </h1>
+
+                <!-- Descripción -->
+                <p class="text-lg sm:text-xl text-gray-600 mt-6 sm:mt-8 text-left">
+                      Instala tu propio Sistema Punto de Venta — con código fuente incluido y soporte personalizado
+                </p>
+
+                <!-- Call to action -->
+                <div class="mt-8 sm:mt-12 text-left flex flex-col sm:flex-row gap-4">
+                    <a (click)="scrollToPrecio()"
+                        class="transition duration-150 ease-in-out transform hover:scale-105 px-7 py-6 text-xl"
+                        mat-flat-button color="primary" type="button">
+                        ¡Conocer Precio!
+                    </a>
+                    <a href="https://ventas.perfisoft.com/sign-in" target="_blank"
+                        class="transition duration-200   ease-in-out transform hover:scale-105 px-7 py-6  text-xl"
+                        mat-stroked-button [color]="'accent'" type="button">
+                        ¡Ir a la demo!
+                    </a>
+                </div>
+            </div>
+            <div class="flex justify-center"></div>
+            <!-- Imagen representativa a la derecha -->
+            <div class="w-full sm:w-1/2 ml-0 sm:ml-10 mt-10 sm:mt-0">
+
+                <!-- <img src="../../../../assets/images/logo/sistema-ventas-landing.jpeg" alt="Landing Image"
+                    class="w-auto h-auto max-w-full object-cover rounded-lg shadow-lg" /> -->
+
+                <swiper-container class="object-cover rounded-lg shadow-lg w-auto" style="max-width: 90%;" autoplay="true"
+                    navigation="false" pagination="true" pagination-clickable="true" speed="500" loop="true">
+
+                    <swiper-slide>
+                        <img style="max-width: 100%" alt=""
+                            src="https://res.cloudinary.com/dvzkgpiv3/image/upload/v1750135788/VentasPlatformDemo/Landing/pcpqfqq9idnnsvfsulub.png" />
+                    </swiper-slide>
+                    <swiper-slide>
+                        <img style="width: 100%" alt=""
+                            src="https://res.cloudinary.com/dvzkgpiv3/image/upload/v1750135788/VentasPlatformDemo/Landing/yrxvyyxc6oz4ly3zihdq.png" />
+                    </swiper-slide>
+
+                    <swiper-slide>
+                        <img style="width: 100%" alt=""
+                            src="https://res.cloudinary.com/dvzkgpiv3/image/upload/v1750135788/VentasPlatformDemo/Landing/s1lljz3dyaxk45qpmmdl.png" />
+                    </swiper-slide>
+
+                    <swiper-slide>
+                        <img style="width: 100%" alt=""
+                            src="https://res.cloudinary.com/dvzkgpiv3/image/upload/v1750135788/VentasPlatformDemo/Landing/a2olpwhmmqcujmb8kpki.png" />
+                    </swiper-slide>
+                </swiper-container>
+            </div>
+        </div>
+    </div>
+
+<!-- Puntos de dolor -->
+<div class="dark:bg-gray-950 flex flex-col items-center px-6 py-10 sm:px-16 sm:pb-20">
+    <div class="w-full max-w-7xl">
+        <div>
+            <div class="text-4xl font-extrabold tracking-tight leading-tight">
+                Hecho para quienes venden y quienes desarrollan
+            </div>
+            <div class="mt-6 text-xl text-gray-500 text-secondary">
+                Tanto si gestionas un negocio como si desarrollas soluciones, este sistema resuelve los típicos dolores de cabeza.
+            </div>
+        </div>
+        <!-- Grid de dolores -->
+        <div
+            class="grid grid-cols-1 gap-x-6 gap-y-12 sm:grid-cols-2 lg:grid-cols-3 lg:gap-16 w-full mt-12 sm:mt-16">
+
+            <!-- Dolor 1 -->
+            <div>
+                <span class="flex items-center justify-center w-12 h-12 rounded bg-red-600">
+                    <mat-icon class="text-white" [svgIcon]="'heroicons_outline:currency-dollar'"></mat-icon>
+                </span>
+                <div class="mt-4 text-xl font-semibold">Sin suscripciones eternas</div>
+                <div class="mt-2 leading-6 text-gray-500">
+                    Ideal para negocios: paga una vez y sé dueño del sistema. Para devs: reutiliza el código sin limitaciones.
+                </div>
+            </div>
+
+            <!-- Dolor 2 -->
+            <div>
+                <span class="flex items-center justify-center w-12 h-12 rounded bg-red-600">
+                    <mat-icon class="text-white" [svgIcon]="'heroicons_outline:code-bracket'"></mat-icon>
+                </span>
+                <div class="mt-4 text-xl font-semibold">Código fuente con manual de instalación</div>
+                <div class="mt-2 leading-6 text-gray-500">
+                    Pensado para desarrolladores: entregamos todo el código incluyendo video manual de instalación.
+                </div>
+            </div>
+
+            <!-- Dolor 3 -->
+            <div>
+                <span class="flex items-center justify-center w-12 h-12 rounded bg-red-600">
+                    <mat-icon class="text-white" [svgIcon]="'heroicons_outline:rocket-launch'"></mat-icon>
+                </span>
+                <div class="mt-4 text-xl font-semibold">Listo para usar desde el día 1</div>
+                <div class="mt-2 leading-6 text-gray-500">
+                    Para emprendedores: lo instalamos y configuras sin saber programar. Para devs: puedes escalarlo sin límites.
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+    <section class="bg-white py-6 px-6 sm:px-6">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-3xl sm:text-5xl font-bold text-gray-900 text-center">🚀 ¡Nuestros clientes Disfrutando Del
+                Sistema! 🥳
+            </h2>
+
+            <!-- Contenedor de cards -->
+            <div class="flex justify-center">
+
+                <!-- Imagen representativa a la derecha -->
+                <div class="w-full sm:w-1/2 ml-0 sm:ml-10  sm:mt-0 justify-center">
+
+                    <swiper-container class="object-cover rounded-lg " style="width: 85%;" autoplay="true"
+                        navigation="false" pagination="true" pagination-clickable="true" speed="500" loop="true">
+
+                        <swiper-slide style="background-color: transparent;">
+                            <img style="width: 100%" alt=""
+                                src="https://res.cloudinary.com/dvzkgpiv3/image/upload/v1744479552/VentasPlatformDemo/Landing/xj59cxsyw0yizdspatme.jpg" />
+                        </swiper-slide>
+
+                        <swiper-slide style="background-color: transparent;">
+                            <img style="width: 100%" alt=""
+                                src="https://res.cloudinary.com/dvzkgpiv3/image/upload/v1744479552/VentasPlatformDemo/Landing/riylqzu12naewypkdavh.png" />
+                        </swiper-slide>
+
+                        <swiper-slide style="background-color: transparent;">
+                            <img style="width: 100%" alt=""
+                                src="https://res.cloudinary.com/dvzkgpiv3/image/upload/v1744479553/VentasPlatformDemo/Landing/onvya4hlglvxjohooshv.png" />
+                        </swiper-slide>
+                        <swiper-slide style="background-color: transparent;">
+                            <img style="width: 100%" alt=""
+                                src="https://res.cloudinary.com/dvzkgpiv3/image/upload/v1744479553/VentasPlatformDemo/Landing/xscjjgbaqjjmsoa4rwjo.png" />
+                        </swiper-slide>
+                        <swiper-slide style="background-color: transparent;">
+                            <img style="width: 100%" alt=""
+                                src="https://res.cloudinary.com/dvzkgpiv3/image/upload/v1746251008/VentasPlatformDemo/Landing/asstplqgo4oanltrdnyu.png" />
+                        </swiper-slide>
+                    </swiper-container>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+<!-- Sección de Beneficios -->
+<section class="dark:bg-gray-900 py-8 px-6 sm:px-8">
+    <div class="max-w-7xl mx-auto">
+        <h2 class="text-4xl sm:text-5xl font-bold text-gray-900 mb-10 text-center">
+            Beneficios para Emprendedores y Desarrolladores
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            
+            <!-- Beneficio 1 -->
+            <div class="bg-white p-6 rounded-2xl shadow-md hover:shadow-lg transition">
+                <h3 class="text-xl font-semibold text-blue-600 mb-4">Código abierto, sin límites</h3>
+                <p class="text-gray-600">Para devs: edita, extiende o integra lo que necesites. Para negocios: controla todo sin depender de terceros.</p>
+            </div>
+
+            <!-- Beneficio 2 -->
+            <div class="bg-white p-6 rounded-2xl shadow-md hover:shadow-lg transition">
+                <h3 class="text-xl font-semibold text-blue-600 mb-4">Listo para usar, fácil de escalar</h3>
+                <p class="text-gray-600">Emprende rápido con una solución funcional. Desarrolladores pueden personalizar sin empezar desde cero.</p>
+            </div>
+
+            <!-- Beneficio 3 -->
+            <div class="bg-white p-6 rounded-2xl shadow-md hover:shadow-lg transition">
+                <h3 class="text-xl font-semibold text-blue-600 mb-4">Interfaz moderna y adaptable</h3>
+                <p class="text-gray-600">Diseño limpio y responsive con Angular Material, pensado para usuarios finales y fácil de mantener por programadores.</p>
+            </div>
+
+            <!-- Beneficio 4 -->
+            <div class="bg-white p-6 rounded-2xl shadow-md hover:shadow-lg transition">
+                <h3 class="text-xl font-semibold text-blue-600 mb-4">Ahorro real</h3>
+                <p class="text-gray-600">Paga una sola vez. Sin cuotas mensuales ni licencias ocultas. Ideal para negocios que quieren autonomía.</p>
+            </div>
+
+            <!-- Beneficio 5 -->
+            <div class="bg-white p-6 rounded-2xl shadow-md hover:shadow-lg transition">
+                <h3 class="text-xl font-semibold text-blue-600 mb-4">Soporte y acompañamiento</h3>
+                <p class="text-gray-600">Te ayudamos con la instalación y puesta en marcha. Para devs: soporte técnico del stack y estructura.</p>
+            </div>
+
+            <!-- Beneficio 6 -->
+            <div class="bg-white p-6 rounded-2xl shadow-md hover:shadow-lg transition">
+                <h3 class="text-xl font-semibold text-blue-600 mb-4">Ideal para proyectos propios o clientes</h3>
+                <p class="text-gray-600">Usa el sistema como solución interna o base para tus desarrollos a medida.</p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+    <!-- Proceso de compra -->
+<!-- Proceso de compra -->
+<div id="precio" class="flex flex-col items-center px-6 py-10 sm:px-8 sm:pt-9 sm:pb-20 bg-white dark:bg-gray-800">
+    <div class="flex justify-center mt-2 sm:mt-5">
+        <fuse-card class="flex flex-col lg:flex-row max-w-sm border border-primary lg:max-w-240 shadow-md">
+            <div class="p-6 sm:p-8 lg:p-5">
+                <h2 class="text-7xl font-bold">Pago Único</h2>
+                <div class="mt-2 leading-relaxed dark:bg-gray-900">
+                    Un solo pago y es tuyo para siempre
+                </div>
+                <div class="flex items-center mt-5">
+                    <div class="text-2xl dark:bg-gray-900">Incluye</div>
+                    <div class="flex-auto ml-2 border-b-2"></div>
+                </div>
+                <!-- Features -->
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-y-4 mt-6">
+                    <div class="flex items-center">
+                        <mat-icon class="icon-size-5 text-primary" [svgIcon]="'heroicons_solid:check-circle'"
+                            aria-label="Beneficio 1"></mat-icon>
+                        <div class="ml-2">Backend .NET 9</div>
+                    </div>
+                    <div class="flex items-center">
+                        <mat-icon class="icon-size-5 text-primary" [svgIcon]="'heroicons_solid:check-circle'"
+                            aria-label="Beneficio 2"></mat-icon>
+                        <div class="ml-2">Frontend Angular 18.</div>
+                    </div>
+                    <div class="flex items-center">
+                        <mat-icon class="icon-size-5 text-primary" [svgIcon]="'heroicons_solid:check-circle'"
+                            aria-label="Beneficio 3"></mat-icon>
+                        <div class="ml-2">Scripts SQL / MySQL</div>
+                    </div>
+                    <div class="flex items-center">
+                        <mat-icon class="icon-size-5 text-primary" [svgIcon]="'heroicons_solid:check-circle'"
+                            aria-label="Beneficio 4"></mat-icon>
+                        <div class="ml-2">Actualizaciones Gratis</div>
+                    </div>
+                    <div class="flex items-center">
+                        <mat-icon class="icon-size-5 text-primary" [svgIcon]="'heroicons_solid:check-circle'"
+                            aria-label="Beneficio 5"></mat-icon>
+                        <div class="ml-2">Grupo en Telegram</div>
+                    </div>
+                    <div class="flex items-center">
+                        <mat-icon class="icon-size-5 text-primary" [svgIcon]="'heroicons_solid:check-circle'"
+                            aria-label="Beneficio 6"></mat-icon>
+                        <div class="ml-2">VideoTutoriales (Instalación, Despliegue y Más)</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Price -->
+            <div class="flex flex-col items-center p-8 lg:px-10 lg:py-12 lg:min-w-80 bg-gray-100 dark:bg-black dark:bg-opacity-10">
+                <!-- Precio antes y ahora -->
+                <div class="flex flex-col items-center whitespace-nowrap mb-4">
+                    <div class="flex items-center gap-2">
+                        <span class="text-4xl font-semibold text-gray-500 line-through">$100</span>
+                        <div class="text-10xl font-extrabold tracking-tight text-green-600">59</div>
+                        <div class="ml-1 text-3xl font-semibold text-secondary">USD</div>
+                    </div>
+ 
+                </div>
+
+                <!-- Aceptamos tarjetas -->
+                <div class="font-medium text-center text-secondary">
+                    <div>Aceptamos todo tipo de <strong>Tarjetas de Crédito y Débito</strong></div>
+
+                    <!-- Iconos de métodos de pago -->
+                    <div class="flex flex-wrap justify-center items-center gap-4 mt-3">
+                        <img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/0/04/Visa.svg" alt="Visa" class="h-8 w-auto">
+                        <img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/0/04/Mastercard-logo.png" alt="Mastercard" class="h-8 w-auto">
+                        <img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" alt="PayPal" class="h-8 w-auto">
+                        <img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/0/08/Icono_de_la_aplicaci%C3%B3n_Yape.png?20240727184013" alt="Yape" class="h-8 w-auto">
+                        <img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Logobcp.png" alt="BCP" class="h-8 w-auto">
+                        <img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/American_Express_logo.svg/450px-American_Express_logo.svg.png?20110516174150" alt="AMEX" class="h-8 w-auto">
+                        
+                    </div>
+                </div>
+
+                <!-- Botón de acción -->
+                <button (click)="mostrarFormulario = !mostrarFormulario" class="w-full mt-4 inline-flex items-center justify-center gap-2 px-6 py-2 text-white 
+        {{ mostrarFormulario ? 'bg-red-500 hover:bg-red-600' : 'bg-blue-500 hover:bg-blue-600' }} 
+        rounded-xl text-base sm:text-lg font-semibold shadow-md transition duration-200 transform hover:scale-105">
+                    {{ mostrarFormulario ? 'Cancelar' : 'Solicitar Sistema' }}
+                </button>
+
+                <!-- Mensaje de llamada a la acción -->
+                <div *ngIf="mostrarFormulario"
+                    class="mt-4 text-center text-lg font-medium text-gray-700 dark:text-gray-300">
+                    🎁👇 ¡Completa el formulario y recibe EL ENLACE DE PAGO + BENEFICIOS! 👇🎁
+                </div>
+
+                <!-- Formulario -->
+                <div *ngIf="mostrarFormulario" class="mt-6 w-full flex flex-col items-center">
+                    <div class="w-full max-w-md space-y-4">
+                        <div>
+                            <label for="nombre"
+                                class="block mb-1 text-sm font-medium text-gray-700 dark:text-gray-300">Nombre</label>
+                            <input [disabled]="disabledInputs" id="nombre" type="text" [(ngModel)]="nombre"
+                                placeholder="Ingresa tu nombre"
+                                [ngClass]="{'border-red-600': nombreInvalido, 'border-gray-300': !nombreInvalido}"
+                                class="w-full px-5 py-3 rounded-lg border bg-white text-gray-900 focus:border-primary focus:ring-2 focus:ring-primary transition duration-200">
+                        </div>
+                        <div>
+                            <label for="correo"
+                                class="block mb-1 text-sm font-medium text-gray-700 dark:text-gray-300">Correo
+                                Electrónico</label>
+                            <input [disabled]="disabledInputs" id="correo" type="email" [(ngModel)]="correo"
+                                placeholder="Ingresa tu correo"
+                                [ngClass]="{'border-red-600': correoInvalido, 'border-gray-300': !correoInvalido}"
+                                class="w-full px-5 py-3 rounded-lg border bg-white text-gray-900 focus:border-primary focus:ring-2 focus:ring-primary transition duration-200">
+                        </div>
+                        <button [disabled]="isCallingService" (click)="solicitarSistema()"
+                            class="items-center justify-center w-full px-6 py-2 rounded-xl mt-2 hover:scale-105 font-semibold shadow-md sm:inline-flex"
+                            mat-flat-button [color]="'primary'" type="button">
+                            <span *ngIf="!isCallingService">Enviar Solicitud</span>
+                            <mat-progress-spinner *ngIf="isCallingService" [diameter]="24"
+                                [mode]="'indeterminate'"></mat-progress-spinner>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </fuse-card>
+    </div>
+</div>
+
+
+    <!-- Frequently Asked Questions (FAQ) - Acordeón -->
+    <!-- faq.component.html -->
+    <div class="py-12 sm:py-8 bg-gray-100 dark:bg-gray-900">
+        <div class="max-w-7xl mx-auto px-6 sm:px-8">
+            <div class="text-center">
+                <h2 class="text-4xl font-extrabold tracking-tight leading-tight text-gray-900 dark:text-white">
+                    Preguntas Frecuentes
+                </h2>
+                <p class="mt-2 text-lg text-gray-600 dark:text-gray-300">
+                    Encuentra respuestas a algunas de las preguntas más comunes sobre nuestro sistema.
+                </p>
+            </div>
+
+            <div class="mt-10 space-y-4">
+                <!-- FAQ: ¿Qué recibiré al adquirir el sistema? -->
+                <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
+                    <button
+                        class="w-full text-left text-xl font-semibold text-gray-900 dark:text-white focus:outline-none flex items-center"
+                        (click)="toggleAccordion(9)">
+                        <svg *ngIf="openFaq !== 9" xmlns="http://www.w3.org/2000/svg"
+                            class="h-6 w-6 text-gray-500 dark:text-gray-300 mr-2" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+                        </svg>
+                        <svg *ngIf="openFaq === 9" xmlns="http://www.w3.org/2000/svg"
+                            class="h-6 w-6 text-gray-500 dark:text-gray-300 mr-2" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 9l6 6 6-6" />
+                        </svg>
+                        ¿Qué RECIBIRÉ al adquirir el SISTEMA?
+                    </button>
+                    <div *ngIf="openFaq === 9" class="mt-2 text-gray-600 dark:text-gray-300">
+                        <p>
+                            Al adquirir el sistema, recibirás acceso al repositorio privado de GitHub, donde encontrarás
+                            todos los recursos necesarios, incluyendo scripts para la creación de tablas, relaciones de
+                            datos y más. También recibirás el proyecto completo del backend y frontend, junto con un
+                            manual de instalación detallado para facilitar la configuración y puesta en marcha del
+                            sistema.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
+                    <button
+                        class="w-full text-left text-xl font-semibold text-gray-900 dark:text-white focus:outline-none flex items-center"
+                        (click)="toggleAccordion(8)">
+                        <svg *ngIf="openFaq !== 8" xmlns="http://www.w3.org/2000/svg"
+                            class="h-6 w-6 text-gray-500 dark:text-gray-300 mr-2" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+                        </svg>
+                        <svg *ngIf="openFaq === 8" xmlns="http://www.w3.org/2000/svg"
+                            class="h-6 w-6 text-gray-500 dark:text-gray-300 mr-2" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 9l6 6 6-6" />
+                        </svg>
+                        ¿El Sistema incluye FACTURACIÓN ELECTRÓNICA?
+                    </button>
+                    <div *ngIf="openFaq === 8" class="mt-2 text-gray-600 dark:text-gray-300">
+                        <p>
+                            No, el sistema NO incluye facturación electrónica, ya que está diseñado para ser utilizado
+                            por clientes de diferentes países, y cada uno tiene sus propias normativas fiscales.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 1 -->
+                <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
+                    <button
+                        class="w-full text-left text-xl font-semibold text-gray-900 dark:text-white focus:outline-none flex items-center"
+                        (click)="toggleAccordion(1)">
+                        <svg *ngIf="openFaq !== 1" xmlns="http://www.w3.org/2000/svg"
+                            class="h-6 w-6 text-gray-500 dark:text-gray-300 mr-2" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+                        </svg>
+                        <svg *ngIf="openFaq === 1" xmlns="http://www.w3.org/2000/svg"
+                            class="h-6 w-6 text-gray-500 dark:text-gray-300 mr-2" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 9l6 6 6-6" />
+                        </svg>
+                        ¿Qué Tecnologías y Patrones Utiliza el Sistema?
+                    </button>
+                    <div *ngIf="openFaq === 1" class="mt-2 text-gray-600 dark:text-gray-300">
+                        <p>El Sistema está desarrollado con SQL, .NET 9 y Angular 18, siguiendo una arquitectura limpia
+                            (DDD). Incluye autenticación con JWT, validaciones con Fluent Validation, generación de
+                            reportes en Excel y PDF, y almacenamiento de fotos y archivos en la nube con Cloudinary.
+                        </p>
+                    </div>
+                </div>
+                <!-- FAQ 6: ¿Cómo se Gestiona la Base de Datos? -->
+                <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
+                    <button
+                        class="w-full text-left text-xl font-semibold text-gray-900 dark:text-white focus:outline-none flex items-center"
+                        (click)="toggleAccordion(7)">
+                        <svg *ngIf="openFaq !== 7" xmlns="http://www.w3.org/2000/svg"
+                            class="h-6 w-6 text-gray-500 dark:text-gray-300 mr-2" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+                        </svg>
+                        <svg *ngIf="openFaq === 7" xmlns="http://www.w3.org/2000/svg"
+                            class="h-6 w-6 text-gray-500 dark:text-gray-300 mr-2" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 9l6 6 6-6" />
+                        </svg>
+                        ¿Cómo se Gestiona la BASE DE DATOS?
+                    </button>
+                    <div *ngIf="openFaq === 7" class="mt-4 text-gray-700 dark:text-gray-300">
+                        <p>El sistema utiliza **Entity Framework Core** para interactuar con la base de datos SQL
+                            Server. Se gestionan migraciones automáticas, relaciones entre entidades definidas, y
+                            consultas optimizadas para asegurar el rendimiento. Además, se emplean transacciones para
+                            garantizar la integridad de los datos, asegurando que cada cambio en la base de datos se
+                            realice de forma segura y consistente.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 2 -->
+                <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
+                    <button
+                        class="w-full text-left text-xl font-semibold text-gray-900 dark:text-white focus:outline-none flex items-center"
+                        (click)="toggleAccordion(2)">
+                        <svg *ngIf="openFaq !== 2" xmlns="http://www.w3.org/2000/svg"
+                            class="h-6 w-6 text-gray-500 dark:text-gray-300 mr-2" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+                        </svg>
+                        <svg *ngIf="openFaq === 2" xmlns="http://www.w3.org/2000/svg"
+                            class="h-6 w-6 text-gray-500 dark:text-gray-300 mr-2" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 9l6 6 6-6" />
+                        </svg>
+                        ¿Qué Características Incluye El BACKEND?
+                    </button>
+                    <div *ngIf="openFaq === 2" class="mt-2 text-gray-600 dark:text-gray-300">
+                        <p>El Backend incluye servicios de email, recuperación de contraseña, encriptación segura,
+                            generación de logs, manejo de excepciones globales, API REST con Swagger y soporte para
+                            múltiples zonas horarias.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 3 -->
+                <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
+                    <button
+                        class="w-full text-left text-xl font-semibold text-gray-900 dark:text-white focus:outline-none flex items-center"
+                        (click)="toggleAccordion(3)">
+                        <svg *ngIf="openFaq !== 3" xmlns="http://www.w3.org/2000/svg"
+                            class="h-6 w-6 text-gray-500 dark:text-gray-300 mr-2" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+                        </svg>
+                        <svg *ngIf="openFaq === 3" xmlns="http://www.w3.org/2000/svg"
+                            class="h-6 w-6 text-gray-500 dark:text-gray-300 mr-2" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 9l6 6 6-6" />
+                        </svg>
+                        ¿Qué Características Incluye El FRONTEND?
+                    </button>
+                    <div *ngIf="openFaq === 3" class="mt-2 text-gray-600 dark:text-gray-300">
+                        <p>El Frontend desarrollado con Angular 18 es una PWA. Incluye gráficos dinámicos con Apex
+                            Charts, validaciones reactivas, carga dinámica con Skeleton, subida de fotos, notificaciones
+                            y modales dinámicos para una mejor experiencia de usuario.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 4 -->
+                <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
+                    <button
+                        class="w-full text-left text-xl font-semibold text-gray-900 dark:text-white focus:outline-none flex items-center"
+                        (click)="toggleAccordion(4)">
+                        <svg *ngIf="openFaq !== 4" xmlns="http://www.w3.org/2000/svg"
+                            class="h-6 w-6 text-gray-500 dark:text-gray-300 mr-2" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+                        </svg>
+                        <svg *ngIf="openFaq === 4" xmlns="http://www.w3.org/2000/svg"
+                            class="h-6 w-6 text-gray-500 dark:text-gray-300 mr-2" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 9l6 6 6-6" />
+                        </svg>
+                        ¿Qué Módulos Incluye El Sistema?
+                    </button>
+                    <div *ngIf="openFaq === 4" class="mt-2 text-gray-600 dark:text-gray-300">
+                        <p>El Sistema incluye módulos para Seguridad, Usuarios, Clientes, Inventario y Ventas. Cada
+                            módulo permite gestión completa, filtros avanzados, reportes detallados y opciones para
+                            habilitar o deshabilitar registros.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 5 -->
+                <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
+                    <button
+                        class="w-full text-left text-xl font-semibold text-gray-900 dark:text-white focus:outline-none flex items-center"
+                        (click)="toggleAccordion(5)">
+                        <svg *ngIf="openFaq !== 5" xmlns="http://www.w3.org/2000/svg"
+                            class="h-6 w-6 text-gray-500 dark:text-gray-300 mr-2" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+                        </svg>
+                        <svg *ngIf="openFaq === 5" xmlns="http://www.w3.org/2000/svg"
+                            class="h-6 w-6 text-gray-500 dark:text-gray-300 mr-2" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 9l6 6 6-6" />
+                        </svg>
+                        ¿Existe un Manual de Instalación?
+                    </button>
+                    <div *ngIf="openFaq === 5" class="mt-2 text-gray-600 dark:text-gray-300">
+                        <p>Sí, se proporciona un documento con el manual de instalación paso a paso. Además, también
+                            está
+                            disponible un tutorial en video para facilitar aún más la configuración del sistema.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 6 -->
+                <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
+                    <button
+                        class="w-full text-left text-xl font-semibold text-gray-900 dark:text-white focus:outline-none flex items-center"
+                        (click)="toggleAccordion(6)">
+                        <svg *ngIf="openFaq !== 6" xmlns="http://www.w3.org/2000/svg"
+                            class="h-6 w-6 text-gray-500 dark:text-gray-300 mr-2" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+                        </svg>
+                        <svg *ngIf="openFaq === 6" xmlns="http://www.w3.org/2000/svg"
+                            class="h-6 w-6 text-gray-500 dark:text-gray-300 mr-2" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 9l6 6 6-6" />
+                        </svg>
+                        ¿Qué Beneficios Exclusivos Se Ofrecen?
+                    </button>
+                    <div *ngIf="openFaq === 6" class="mt-2 text-gray-600 dark:text-gray-300">
+                        <p>Recibirás 3 meses de actualizaciones gratuitas del código, funciones premium como envío
+                            masivo de correos, chatbot integrado, inteligencia artificial en reportes, soporte técnico
+                            24/7 y acceso a la comunidad en Telegram.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-16">
+        <div class="max-w-7xl mx-auto px-6 sm:px-16">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12">
+                <!-- Columna de enlaces rápidos -->
+                <div>
+                    <h3 class="text-xl font-extrabold mb-4">Enlaces rápidos</h3>
+                    <ul class="space-y-4">
+                        <li><a href="https://ventas.perfisoft.com/sign-in" target="_blank"
+                                class="text-gray-400 hover:text-white transition-all">Demo del Sistema</a></li>
+                        <li><a href="https://perfisoft.com" target="_blank"
+                                class="text-gray-400 hover:text-white transition-all">Acerca de Nosotros</a></li>
+                        <li><a href="https://perfisoft.com/contacto" target="_blank"
+                                class="text-gray-400 hover:text-white transition-all">Sistema Personalizado</a></li>
+                        <li><a href="https://wa.link/0yghxs" target="_blank"
+                                class="text-gray-400 hover:text-white transition-all">¡Comprar Ahora!</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-extrabold mb-4">Síguenos</h3>
+                    <ul class="space-y-4">
+                        <li><a href="https://www.facebook.com/people/Perfisoft-Espa%C3%B1ol/61563966461545"
+                                target="_blank" class="text-gray-400 hover:text-white transition-all">Facebook</a></li>
+                        <li><a href="https://x.com/perfisoft_es" target="_blank"
+                                class="text-gray-400 hover:text-white transition-all">Twitter</a></li>
+                        <li><a href="https://www.linkedin.com/company/105790272/admin/dashboard/" target="_blank"
+                                class="text-gray-400 hover:text-white transition-all">LinkedIn</a></li>
+                        <li><a href="https://www.instagram.com/perfisoft" target="_blank"
+                                class="text-gray-400 hover:text-white transition-all">Instagram</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-extrabold mb-4">Legal</h3>
+                    <ul class="space-y-4">
+                        <li><a href="https://perfisoft.com/aviso-legal-y-condiciones-generales-de-uso/" target="_blank"
+                                class="text-gray-400 hover:text-white transition-all">Aviso Legal y Términos de Uso</a>
+                        </li>
+                        <li><a href="https://perfisoft.com/terminos-condiciones/" target="_blank"
+                                class="text-gray-400 hover:text-white transition-all">Términos y Condiciones</a></li>
+                        <li><a href="https://perfisoft.com/politica-privacidad/" target="_blank"
+                                class="text-gray-400 hover:text-white transition-all">Política de Privacidad</a></li>
+                        <li><a href="https://perfisoft.com/politica-cookies/" target="_blank"
+                                class="text-gray-400 hover:text-white transition-all">Política de Cookies</a></li>
+                    </ul>
+                </div>
+                <!-- Columna de Proyectos -->
+                <div>
+                    <h3 class="text-xl font-extrabold mb-4">Proyectos</h3>
+                    <ul class="space-y-4">
+                        <li><a href="https://budble.perfisoft.com/sign-in" target="_blank"
+                                class="text-gray-400 hover:text-white transition-all">BudBle</a></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Barra inferior -->
+            <div class="mt-12 border-t border-gray-700 pt-8 text-center text-sm text-gray-400">
+                <p>&copy; 2025 Perfisoft. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+</div>

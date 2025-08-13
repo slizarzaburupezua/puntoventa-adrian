@@ -1,0 +1,184 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="PropertyNameCorrectLenght" xml:space="preserve">
+    <value>{PropertyName} longitud del parámetro debe estar entre 2 y 100 caracteres</value>
+    <comment>Validación que indica que el parametro debe estar entre 2 y 100 caracteres</comment>
+  </data>
+  <data name="PropertyNameCorrectValue" xml:space="preserve">
+    <value>{PropertyName} valor incorrecto</value>
+    <comment>Validación que indica que el parametro tiene un valor no valido</comment>
+  </data>
+  <data name="PropertyNameInvalidEmail" xml:space="preserve">
+    <value>{PropertyName} no tiene un email válido</value>
+    <comment>Validación que indica que el parametro debe tener un formato de email válido</comment>
+  </data>
+  <data name="PropertyNameInvalidFecha" xml:space="preserve">
+    <value>{PropertyName} no tiene un formato de fecha válido</value>
+  </data>
+  <data name="PropertyNameInvalidGuid" xml:space="preserve">
+    <value>{PropertyName} no tiene un identificador válido</value>
+    <comment>Validación que indica que el parámetro debe ser un GUID</comment>
+  </data>
+  <data name="PropertyNameInvalidLength" xml:space="preserve">
+    <value>{PropertyName} no tiene una longitud valida</value>
+  </data>
+  <data name="PropertyNameInvalidLengthOTP" xml:space="preserve">
+    <value>{PropertyName} No contiene la longitud de código correcta</value>
+  </data>
+  <data name="PropertyNameInvalidUserAge" xml:space="preserve">
+    <value>{PropertyName} no tiene la edad requerida para poder continuar en nuestro sistema</value>
+  </data>
+  <data name="PropertyNameLengthPassword" xml:space="preserve">
+    <value>{PropertyName} No cumple con la cantidad de digitos de una contraseña segura. Minimo 12 digitos.</value>
+    <comment>Validación que indica que el parametro debe tener una cantidad de digitos minimo de 12 para que se considere una contraseña segura</comment>
+  </data>
+  <data name="PropertyNameMaxLengthPassword" xml:space="preserve">
+    <value>{PropertyName} debe incluir como máximo 80 caracteres</value>
+  </data>
+  <data name="PropertyNameMaxLengthUser" xml:space="preserve">
+    <value>{PropertyName} debe incluir como máximo 40 caracteres</value>
+  </data>
+  <data name="PropertyNameMinLengthUser" xml:space="preserve">
+    <value>{PropertyName} No cumple con la cantidad de digitos de un nombre de usuario seguro. Mínimo 12 digitos.</value>
+  </data>
+  <data name="PropertyNameNoNumbers" xml:space="preserve">
+    <value>{PropertyName} no debe contener números</value>
+    <comment>Validación que indica que el parámetro no debe contener números</comment>
+  </data>
+  <data name="PropertyNameNotEmpty" xml:space="preserve">
+    <value>{PropertyName} no debe ser vacío</value>
+    <comment>Validación que indica que el parametro no debe ser vacío</comment>
+  </data>
+  <data name="PropertyNameNotNull" xml:space="preserve">
+    <value>{PropertyName} no debe ser nulo</value>
+    <comment>Validación que indica que el parametro no debe ser nulo</comment>
+  </data>
+  <data name="PropertyNameOnlyCharacters" xml:space="preserve">
+    <value>{PropertyName] solo debe de contener letras, espacios, apóstrofos y guiones.</value>
+    <comment>Validación que indica que el parámetro solo debe contener letras, espacios, apostrofos y guiones</comment>
+  </data>
+  <data name="PropertyNameOnlyNumbers" xml:space="preserve">
+    <value>{PropertyName] solo debe de contener números</value>
+    <comment>Validación que indica que el parámetro solo debe contener números</comment>
+  </data>
+  <data name="PropertyNameSecurePassword" xml:space="preserve">
+    <value>{PropertyName} debe incluir al menos una mayúscula, una minúscula, un número y un símbolo especial.</value>
+  </data>
+</root>

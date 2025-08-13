@@ -1,0 +1,198 @@
+<div class="flex flex-col max-w-3xl md:min-w-[50rem] -m-6 height-dialog">
+    <!-- Header -->
+    <div class="flex items-center justify-between h-16 pr-3 sm:pr-5 pl-6 sm:pl-8 bg-primary text-on-primary">
+        <div class="text-lg font-medium">Modificar detalle del parámetro</div>
+        <button mat-icon-button [tabIndex]="-1" (click)="cerrarVentanaEmergente()" aria-label="Cerrar ventana">
+            <mat-icon class="text-current" [svgIcon]="'heroicons_outline:x-mark'"></mat-icon>
+        </button>
+    </div>
+
+    <!-- Formulario -->
+    <form class="flex flex-col flex-auto p-6 sm:p-8 overflow-y-auto" [formGroup]="actualizaParametroDetalleForm">
+        @if (isMobilSize()) {
+
+        <div class="flex flex-wrap space-y-4">
+
+            <div class="w-full">
+                <!-- Detalle Parámetro -->
+                <mat-form-field class="w-full" [appearance]="'outline'">
+                    <mat-label>Detalle Parámetro</mat-label>
+                    <input autocomplete="off" matInput formControlName="nombreParametro">
+                </mat-form-field>
+            </div>
+
+            <!-- Tipo -->
+            <mat-form-field class="w-full" appearance="outline">
+                <mat-label>Tipo</mat-label>
+                <mat-select formControlName="tipoCampo" required (selectionChange)="onTipoChange($event)">
+                    <mat-option *ngFor="let tipo of tipos" [value]="tipo">{{ tipo }}</mat-option>
+                </mat-select>
+                <mat-error *ngIf="actualizaParametroDetalleForm.get('tipoCampo')?.hasError('required')">
+                    Tipo es requerido
+                </mat-error>
+            </mat-form-field>
+
+            <!-- Campo tipo URL -->
+            <div *ngIf="actualizaParametroDetalleForm.get('tipoCampo')?.value === 'URL'"
+                class="w-full flex flex-col gap-2">
+                <mat-form-field class="w-full" appearance="outline">
+                    <mat-label>URL de la Imagen</mat-label>
+                    <input matInput formControlName="svalor2" />
+                </mat-form-field>
+                <div *ngIf="actualizaParametroDetalleForm.get('svalor2')?.value" class="flex justify-center mt-2">
+                    <div class="w-full max-w-[600px] h-[300px] bg-gray-100 border flex items-center justify-center">
+                        <img [src]="actualizaParametroDetalleForm.get('svalor2')?.value" alt="Vista previa"
+                            class="max-w-full max-h-full object-contain" />
+                    </div>
+                </div>
+            </div>
+
+            <!-- Campo tipo IMAGEN -->
+            <div *ngIf="actualizaParametroDetalleForm.get('tipoCampo')?.value === 'IMAGEN'"
+                class="w-full flex justify-center items-center mt-2">
+                <div
+                    class="relative w-full max-w-[600px] h-[300px] overflow-hidden ring-4 ring-bg-card bg-gray-100 group flex items-center justify-center">
+                    <ng-container *ngIf="selectedFiles || foto; else noImage">
+                        <img [src]="selectedFiles || foto" alt="Imagen actual"
+                            class="max-w-full max-h-full object-contain" />
+                    </ng-container>
+                    <ng-template #noImage>
+                        <div class="flex items-center justify-center w-full h-full bg-gray-200 text-gray-600 text-sm">
+                            SIN IMAGEN
+                        </div>
+                    </ng-template>
+
+                    <!-- Overlay -->
+                    <div
+                        class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 z-10 opacity-0 group-hover:opacity-100 transition-opacity">
+                        <label for="avatar-file-input"
+                            class="cursor-pointer w-10 h-10 flex items-center justify-center rounded-full hover:bg-hover"
+                            matRipple>
+                            <mat-icon class="text-white" [svgIcon]="'heroicons_outline:camera'"></mat-icon>
+                        </label>
+                        <input id="avatar-file-input" type="file" class="hidden" accept="image/*"
+                            (change)="onFileSelected($event)" />
+
+                        <button *ngIf="selectedFiles || foto" mat-icon-button class="ml-2 text-white hover:text-red-500"
+                            aria-label="Eliminar imagen" (click)="eliminarFoto()">
+                            <mat-icon class="text-white" [svgIcon]="'heroicons_outline:trash'"></mat-icon>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Botones -->
+            <div class="w-full flex justify-between mb-2">
+                <button class="mobil-btn" mat-stroked-button color="accent" type="button"
+                    (click)="cerrarVentanaEmergente()">
+                    <span>Cancelar</span>
+                </button>
+                <span class="w-4"></span>
+                <button class="mobil-btn" mat-flat-button color="primary" type="button" (click)="UpdateAsync()"
+                    [disabled]="actualizaParametroDetalleForm.invalid || isCallingService">
+                    <span *ngIf="!actualizaParametroDetalleForm.disabled">Guardar</span>
+                    <mat-progress-spinner *ngIf="actualizaParametroDetalleForm.disabled" [diameter]="24"
+                        mode="indeterminate"></mat-progress-spinner>
+                </button>
+            </div>
+
+        </div>
+
+        } @else {
+
+        <div class="flex flex-col">
+
+            <div class="flex justify-between gap-4">
+
+                <!-- Detalle Parámetro   -->
+                <mat-form-field class="flex-1" appearance="outline">
+                    <mat-label>Detalle Parámetro</mat-label>
+                    <input matInput formControlName="nombreParametro" readonly />
+                </mat-form-field>
+
+            </div>
+
+            <div class="flex justify-between gap-4">
+                <!-- Tipo -->
+                <mat-form-field class="flex-1" appearance="outline">
+                    <mat-label>Tipo</mat-label>
+                    <mat-select formControlName="tipoCampo" required (selectionChange)="onTipoChange($event)">
+                        <mat-option *ngFor="let tipo of tipos" [value]="tipo">{{ tipo }}</mat-option>
+                    </mat-select>
+                    <mat-error *ngIf="actualizaParametroDetalleForm.get('tipoCampo')?.hasError('required')">
+                        Tipo es requerido
+                    </mat-error>
+                </mat-form-field>
+
+            </div>
+
+            <!-- Campo tipo URL -->
+            <ng-container *ngIf="actualizaParametroDetalleForm.get('tipoCampo')?.value === 'URL'"
+                class="flex flex-col gap-2">
+                <mat-form-field class="w-full" appearance="outline">
+                    <mat-label>URL de la Imagen</mat-label>
+                    <input matInput formControlName="svalor2" />
+                </mat-form-field>
+                <div *ngIf="actualizaParametroDetalleForm.get('svalor2')?.value" class="flex justify-center mt-2">
+                    <div class="w-full max-w-[600px] h-[300px] bg-gray-100 border flex items-center justify-center">
+                        <img [src]="actualizaParametroDetalleForm.get('svalor2')?.value" alt="Vista previa"
+                            class="max-w-full max-h-full object-contain" />
+                    </div>
+                </div>
+            </ng-container>
+
+            <!-- Campo tipo IMAGEN -->
+            <div *ngIf="actualizaParametroDetalleForm.get('tipoCampo')?.value === 'IMAGEN'"
+                class="flex justify-center items-center mt-4">
+                <div
+                    class="relative w-full max-w-[600px] h-[300px] overflow-hidden ring-4 ring-bg-card bg-gray-100 group flex items-center justify-center">
+                    <div *ngIf="selectedFiles || foto; else noImage">
+                        <img [src]="selectedFiles || foto" alt="Imagen actual"
+                            class="max-w-full max-h-full object-contain" />
+                    </div>
+                    <ng-template #noImage>
+                        <div class="flex items-center justify-center w-full h-full bg-gray-200 text-gray-600 text-sm">
+                            SIN IMAGEN
+                        </div>
+                    </ng-template>
+
+                    <!-- Overlay -->
+                    <div
+                        class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 z-10 opacity-0 group-hover:opacity-100 transition-opacity">
+                        <label for="avatar-file-input"
+                            class="cursor-pointer w-10 h-10 flex items-center justify-center rounded-full hover:bg-hover"
+                            matRipple>
+                            <mat-icon class="text-white" [svgIcon]="'heroicons_outline:camera'"></mat-icon>
+                        </label>
+                        <input id="avatar-file-input" type="file" class="hidden" accept="image/*"
+                            (change)="onFileSelected($event)" />
+
+                        <button *ngIf="selectedFiles || foto" mat-icon-button class="ml-2 text-white hover:text-red-500"
+                            aria-label="Eliminar imagen" (click)="eliminarFoto()">
+                            <mat-icon class="text-white" [svgIcon]="'heroicons_outline:trash'"></mat-icon>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Actions -->
+            <div class="flex justify-end mt-4">
+                <button class="px-8" mat-stroked-button [color]="'accent'" type="button"
+                    (click)="cerrarVentanaEmergente()">
+                    <span> Cancelar </span>
+                </button>
+                <button class="  hidden sm:inline-flex ml-3 sm:w-40 sm:h-10 sm:items-center sm:justify-center"
+                    mat-flat-button [color]="'primary'" type="button"
+                    [disabled]="actualizaParametroDetalleForm.invalid || isCallingService" (click)="UpdateAsync()">
+                    <span *ngIf="!actualizaParametroDetalleForm.disabled">
+                        Guardar
+                    </span>
+                    <mat-progress-spinner *ngIf="actualizaParametroDetalleForm.disabled" [diameter]="24"
+                        [mode]="'indeterminate'">
+                    </mat-progress-spinner>
+                </button>
+            </div>
+        </div>
+        }
+    </form>
+</div>

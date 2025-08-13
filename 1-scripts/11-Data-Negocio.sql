@@ -1,0 +1,3 @@
+INSERT [dbo].[NEGOCIO] ([id_moneda], [razon_social], [ruc], [direccion], [celular], [correo_electronico], [id_foto], [urlfoto], [color_boleta_factura], [formato_impresion], [fecha_registro], [fecha_actualizacion],[fecha_anulacion]) VALUES (17,'PERFISOFT S.A.C', '20613145169', 'Lima - Peru', '9999999999', 'notificaciones@perfisoft.com', 'itt2bwq1ruk5uk67w9hw','https://res.cloudinary.com/dvzkgpiv3/image/upload/v1738015807/VentasPlatformDemo/Usuarios/itt2bwq1ruk5uk67w9hw.png','#008080', 'PDF', CAST(N'2025-01-13T06:46:20.060' AS DateTime), NULL, NULL)
+GO
+ 

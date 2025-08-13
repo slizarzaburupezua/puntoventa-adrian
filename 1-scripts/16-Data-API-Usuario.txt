@@ -1,0 +1,30 @@
+1. Ejecutar la siguiente línea de código para obtener el TimeZone 
+
+// INIT SCRIPT TIMEZONE
+
+const message =  Intl.DateTimeFormat().resolvedOptions().timeZone;
+ 
+console.log(message)
+
+// END SCRIPT TIMEZONE
+
+2. Reemplazar "America/Lima" por el valor que devuelve la consola.
+
+3. 
+
+{
+  "destinationTimeZoneIdRegistro": "America/Lima",
+  "idRol": 1,
+  "idTipoDocumento": 1,
+  "numeroDocumento": "12345678",
+  "nombres": "Nombres",
+  "apellidos": "Apellidos",
+  "idGenero": 1,
+  "correoElectronico": "admin@gmail.com",
+  "fechaNacimiento": "1997-11-16T18:37:03.891Z",
+  "celular": "",
+  "direccion": "",
+  "contrasenia": "Contrasenia2025*"
+}
+
+

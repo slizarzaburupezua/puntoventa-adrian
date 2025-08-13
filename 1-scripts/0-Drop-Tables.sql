@@ -1,0 +1,22 @@
+DROP TABLE Negocio  
+DROP TABLE DetalleVenta 
+DROP TABLE Venta  
+DROP TABLE VentaNumeroCorrelativo  
+DROP TABLE Cliente 
+DROP TABLE Producto  
+DROP TABLE Categoria 
+DROP TABLE Medida  
+DROP TABLE Moneda   
+DROP TABLE UsuarioRestableceContrasenia 
+DROP TABLE UsuarioContrasena 
+DROP TABLE UsuarioId  	
+DROP TABLE Usuario    
+DROP TABLE Genero  
+DROP TABLE MenuRol  
+DROP TABLE Menu  
+DROP TABLE Rol
+DROP TABLE Marca
+DROP TABLE Parametro
+DROP TABLE ParametroDetalle
+DROP TABLE TipoDocumento 
+

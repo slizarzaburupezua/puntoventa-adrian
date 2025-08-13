@@ -1,0 +1,26 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>disable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FluentValidation" Version="11.11.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="Serilog" Version="4.2.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore.Annotations" Version="7.2.0" />
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="8.3.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\PERFISOFT.VENTASPLATFORM.INFRASTRUCTURE.COMMON\PERFISOFT.VENTASPLATFORM.INFRASTRUCTURE.COMMON.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="DetalleVenta\Validator\" />
+    <Folder Include="DetalleVenta\Response\" />
+  </ItemGroup>
+
+</Project>

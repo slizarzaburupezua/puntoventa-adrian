@@ -1,0 +1,24 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>disable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="ClosedXML" Version="0.102.3" />
+    <PackageReference Include="CloudinaryDotNet" Version="1.27.1" />
+    <PackageReference Include="HarfBuzzSharp.NativeAssets.Linux" Version="8.3.0.1" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="9.0.1" />
+    <PackageReference Include="QuestPDF" Version="2025.1.5" />
+    <PackageReference Include="SkiaSharp" Version="3.116.1" />
+    <PackageReference Include="SkiaSharp.NativeAssets.Linux.NoDependencies" Version="3.116.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\PERFISOFT.VENTASPLATFORM.DOMAIN\PERFISOFT.VENTASPLATFORM.DOMAIN.csproj" />
+    <ProjectReference Include="..\PERFISOFT.VENTASPLATFORM.INFRASTRUCTURE.DTO\PERFISOFT.VENTASPLATFORM.INFRASTRUCTURE.DTO.csproj" />
+  </ItemGroup>
+
+</Project>

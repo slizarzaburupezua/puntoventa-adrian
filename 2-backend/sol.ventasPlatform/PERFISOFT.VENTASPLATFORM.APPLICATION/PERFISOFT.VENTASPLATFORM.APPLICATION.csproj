@@ -1,0 +1,25 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>disable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="13.0.1" />
+    <PackageReference Include="Konscious.Security.Cryptography.Argon2" Version="1.3.1" />
+    <PackageReference Include="Serilog.AspNetCore" Version="9.0.0" />
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="8.3.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\PERFISOFT.VENTASPLATFORM.APPLICATION.COMMON\PERFISOFT.VENTASPLATFORM.APPLICATION.COMMON.csproj" />
+    <ProjectReference Include="..\PERFISOFT.VENTASPLATFORM.DOMAIN\PERFISOFT.VENTASPLATFORM.DOMAIN.csproj" />
+    <ProjectReference Include="..\PERFISOFT.VENTASPLATFORM.INFRASTRUCTURE.CROSSCUTTING\PERFISOFT.VENTASPLATFORM.INFRASTRUCTURE.CROSSCUTTING.csproj" />
+    <ProjectReference Include="..\PERFISOFT.VENTASPLATFORM.INFRASTRUCTURE.DTO\PERFISOFT.VENTASPLATFORM.INFRASTRUCTURE.DTO.csproj" />
+    <ProjectReference Include="..\PERFISOFT.VENTASPLATFORM.INFRASTRUCTURE.SERVICES\PERFISOFT.VENTASPLATFORM.INFRASTRUCTURE.SERVICES.csproj" />
+    <ProjectReference Include="..\PERFISOFT.VENTASPLATFORM.SEEDWORK.DOMAIN\PERFISOFT.VENTASPLATFORM.SEEDWORK.DOMAIN.csproj" />
+  </ItemGroup>
+
+</Project>
