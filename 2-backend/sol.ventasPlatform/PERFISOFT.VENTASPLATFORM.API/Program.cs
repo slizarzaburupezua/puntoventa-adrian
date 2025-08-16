@@ -14,21 +14,21 @@ builder.Services.AddControllers(options =>
 builder.Services.AddCors(options =>
 {
     //DEV   
-    options.AddPolicy("NewPolitic", app =>
-    {
-        app.AllowAnyOrigin()
-           .AllowAnyHeader()
-           .AllowAnyMethod();
-    });
+    //options.AddPolicy("NewPolitic", app =>
+    //{
+    //    app.AllowAnyOrigin()
+    //       .AllowAnyHeader()
+    //       .AllowAnyMethod();
+    //});
 
     //PROD
-    //options.AddPolicy(name: MyAllowSpecificOrigins,
-    //              policy =>
-    //              {
-    //                  policy.WithOrigins("https://xxxxxxxx.com")
-    //                        .AllowAnyHeader()
-    //                        .AllowAnyMethod();
-    //              });
+    options.AddPolicy(name: MyAllowSpecificOrigins,
+                  policy =>
+                  {
+                      policy.WithOrigins("https://ventas.lavanderiaswanki.com")
+                            .AllowAnyHeader()
+                            .AllowAnyMethod();
+                  });
 
 });
 
@@ -81,8 +81,8 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
-//app.UseCors(MyAllowSpecificOrigins); // PROD
-  app.UseCors("NewPolitic"); //DEV
+app.UseCors(MyAllowSpecificOrigins); // PROD
+//app.UseCors("NewPolitic"); //DEV
 
 app.UseAuthentication();
 app.UseAuthorization();
