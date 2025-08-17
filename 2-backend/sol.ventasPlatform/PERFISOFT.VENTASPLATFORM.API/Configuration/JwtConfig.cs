@@ -32,8 +32,8 @@ namespace PERFISOFT.VENTASPLATFORM.API.Configuration
                 };
                 config.TokenValidationParameters.ValidateIssuer = true;
                 config.TokenValidationParameters.ValidateAudience = true;
-                config.TokenValidationParameters.ValidIssuer = "https://ventas.lavanderiaswanki.com";
-                config.TokenValidationParameters.ValidAudience = "https://ventas.lavanderiaswanki.com";
+                config.TokenValidationParameters.ValidIssuer = "https://mercantil.online";
+                config.TokenValidationParameters.ValidAudience = "https://mercantil.online";
 
             });
 

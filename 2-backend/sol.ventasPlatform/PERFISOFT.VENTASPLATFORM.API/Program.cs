@@ -25,7 +25,7 @@ builder.Services.AddCors(options =>
     options.AddPolicy(name: MyAllowSpecificOrigins,
                   policy =>
                   {
-                      policy.WithOrigins("https://ventas.lavanderiaswanki.com")
+                      policy.WithOrigins("https://mercantil.online")
                             .AllowAnyHeader()
                             .AllowAnyMethod();
                   });
