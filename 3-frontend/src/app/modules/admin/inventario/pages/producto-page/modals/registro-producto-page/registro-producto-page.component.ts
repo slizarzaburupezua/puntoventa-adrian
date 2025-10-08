@@ -120,12 +120,7 @@ export class RegistroProductoPageComponent implements OnInit {
       this._toolService.showWarning(DictionaryWarning.InvalidPrecioVenta, DictionaryWarning.Tittle);
       return;
     }
-
-    if (FuseValidators.isEmptyInputValue(txtStock) || txtStock == Numeracion.Cero) {
-      this._toolService.showWarning(DictionaryWarning.InvalidPrecioStock, DictionaryWarning.Tittle);
-      return;
-    }
-
+ 
     const request = new RegistrarProductoRequest();
 
     request.destinationTimeZoneIdRegistro = destinationTimeZoneId;

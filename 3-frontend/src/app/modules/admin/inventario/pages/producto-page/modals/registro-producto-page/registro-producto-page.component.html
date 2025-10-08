@@ -100,7 +100,7 @@
                 <mat-form-field class="w-full" [appearance]="'outline'">
                     <mat-label>Stock</mat-label>
                     <input type="number" autocomplete="off" matInput appTwoDigitDecimaNumber formControlName="stock"
-                        max="999" min="1" required (keydown)="preventNegative($event)">
+                        max="999" min="0" required (keydown)="preventNegative($event)">
                     <mat-error *ngIf="registroProductoForm.get('stock').hasError('required')">
                         Stock es requerido
                     </mat-error>
@@ -275,7 +275,7 @@
             <mat-form-field class="flex-1" [appearance]="'outline'">
                 <mat-label>Stock</mat-label>
                 <input type="number" autocomplete="off" matInput appTwoDigitDecimaNumber formControlName="stock"
-                    max="999" min="1" required (keydown)="preventNegative($event)">
+                    max="999" min="0" required (keydown)="preventNegative($event)">
                 <mat-error *ngIf="registroProductoForm.get('stock').hasError('required')">
                     Stock es requerido
                 </mat-error>

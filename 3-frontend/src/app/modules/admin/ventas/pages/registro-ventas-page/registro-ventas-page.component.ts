@@ -91,7 +91,7 @@ export class RegistroVentasPageComponent implements OnInit, OnDestroy {
         }, Numeracion.Cero);
     }
 
-    pageSize = Numeracion.Diez;
+    pageSize = Numeracion.Ocho;
     currentPage = Numeracion.Cero;
     startIndex = Numeracion.Cero;
     endIndex = this.pageSize;

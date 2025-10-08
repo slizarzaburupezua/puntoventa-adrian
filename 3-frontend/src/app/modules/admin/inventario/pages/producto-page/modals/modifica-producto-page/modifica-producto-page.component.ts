@@ -117,12 +117,7 @@ export class ModificaProductoPageComponent implements OnInit {
       this._toolService.showWarning(DictionaryWarning.InvalidPrecioVenta, DictionaryWarning.Tittle);
       return;
     }
-
-    if (FuseValidators.isEmptyInputValue(txtStock) || txtStock == Numeracion.Cero) {
-      this._toolService.showWarning(DictionaryWarning.InvalidPrecioStock, DictionaryWarning.Tittle);
-      return;
-    }
-    
+ 
     if (FuseValidators.isEmptyInputValue(txtColor)) {
       this._toolService.showWarning(DictionaryWarning.InvalidColor, DictionaryWarning.Tittle);
       return;

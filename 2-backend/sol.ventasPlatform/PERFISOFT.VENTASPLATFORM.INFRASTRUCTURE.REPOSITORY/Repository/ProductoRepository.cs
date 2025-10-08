@@ -101,8 +101,7 @@ namespace PERFISOFT.VENTASPLATFORM.INFRASTRUCTURE.REPOSITORY.Repository
             var query = All<Producto>()
                 .AsNoTracking()
                 .Where(p => p.ESTADO == Flags.Habilitado &&
-                            p.CATEGORIA.ESTADO == Flags.Habilitado &&
-                            p.CATEGORIA.ACTIVO == Flags.Activado);
+                            p.ACTIVO == Flags.Activado);
 
             if (idCategoria > Numeracion.Cero)
                 query = query.Where(p => p.CATEGORIA.ID == idCategoria);

@@ -45,12 +45,7 @@ namespace PERFISOFT.VENTASPLATFORM.INFRASTRUCTURE.DTO.Inventario.Producto.Valida
                 .NotNull().WithMessage(GV.PropertyNameNotNull)
                 .NotEmpty().WithMessage(GV.PropertyNameNotEmpty)
                 .NotEqual(Numeracion.Cero).WithMessage(GV.PropertyNameCorrectValue);
-
-            RuleFor(x => x.Stock)
-                .NotNull().WithMessage(GV.PropertyNameNotNull)
-                .NotEmpty().WithMessage(GV.PropertyNameNotEmpty)
-                .NotEqual(Numeracion.Cero).WithMessage(GV.PropertyNameCorrectValue);
-
+ 
             RuleFor(x => x.Descripcion)
                 .MaximumLength(Numeracion.Quinientos).WithMessage(GV.PropertyNameCorrectLenght);
 

@@ -32,8 +32,8 @@ namespace PERFISOFT.VENTASPLATFORM.API.Configuration
                 };
                 config.TokenValidationParameters.ValidateIssuer = true;
                 config.TokenValidationParameters.ValidateAudience = true;
-                config.TokenValidationParameters.ValidIssuer = "https://mercantil.online";
-                config.TokenValidationParameters.ValidAudience = "https://mercantil.online";
+                config.TokenValidationParameters.ValidIssuer = "http://localhost:4200";
+                config.TokenValidationParameters.ValidAudience = "http://localhost:4200";
 
             });
 

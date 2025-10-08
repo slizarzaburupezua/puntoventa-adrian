@@ -186,13 +186,13 @@
                             [theme]="{ 'border-radius': '0', height: '50px' }"></ngx-skeleton-loader>
                     </div>
 
-                    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-5 mt-6 "
+                    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 gap-5 mt-6 "
                         *ngIf="!skeleton">
                         <mat-card *ngFor="let producto of allProductByCategoryDataSource | slice: startIndex : endIndex"
                             class="flex flex-col items-center transform transition-transform hover:scale-105 hover:shadow-xl border border-gray-200 rounded-2xl shadow-lg p-4">
 
                             <!-- Imagen del producto -->
-                            <div class="w-24 h-24 mb-4 rounded-xl overflow-hidden border border-gray-300">
+                            <div class="w-48   h-64  mb-4 rounded-xl overflow-hidden border border-gray-300">
                                 <img *ngIf="producto.urlFoto; else noImagen" [src]="producto.urlFoto"
                                     [alt]="producto.nombre" class="w-full h-full object-cover">
                                 <ng-template #noImagen>
@@ -233,7 +233,7 @@
                         </mat-card>
                     </div>
                     <mat-paginator class="mt-6" [length]="allProductByCategoryDataSource?.length" [pageSize]="pageSize"
-                        [pageSizeOptions]="[5, 10, 20]" (page)="onPageChange($event)">
+                        [pageSizeOptions]="[8, 16, 24]" (page)="onPageChange($event)">
                     </mat-paginator>
 
                 </div>
