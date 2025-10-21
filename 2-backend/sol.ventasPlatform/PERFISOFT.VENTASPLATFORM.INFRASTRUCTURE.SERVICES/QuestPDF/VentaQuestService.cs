@@ -154,6 +154,12 @@ namespace PERFISOFT.VENTASPLATFORM.INFRASTRUCTURE.SERVICES.QuestPDFLibrary
 
                         col1.Item().AlignRight().Text(filtro.Venta.PRECIO_TOTAL.ToString("C", cultureInfo)).FontSize(12);
 
+                        col1.Item().AlignRight()
+                            .Text("Los precios incluyen impuestos")
+                            .FontSize(9)
+                            .Bold()
+                            .FontColor(Colors.Red.Medium);
+
                         if (!string.IsNullOrWhiteSpace(filtro.Venta.NOTA_ADICIONAL))
                         {
                             col1.Item().Background(Colors.Grey.Lighten3).Padding(10)

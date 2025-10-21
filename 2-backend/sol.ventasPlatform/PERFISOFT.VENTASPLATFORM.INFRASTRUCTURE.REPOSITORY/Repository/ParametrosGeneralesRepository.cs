@@ -96,7 +96,7 @@ namespace PERFISOFT.VENTASPLATFORM.INFRASTRUCTURE.REPOSITORY.Repository
         {
             return await (from mr in _context.MenuRol
                           join m in _context.Menu on mr.ID_MENU equals m.ID
-                          where mr.ID_ROL == idRol
+                          where mr.ID_ROL == idRol  && m.ACTIVO == true && m.ESTADO == true
                           select new ObtenerMenuRol
                           {
                               PADRE_TEXTO = m.PADRE_TEXTO,

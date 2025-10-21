@@ -66,7 +66,7 @@ export class RegistroVentasPageComponent implements OnInit, OnDestroy {
 
     private _unsubscribeAll: Subject<any> = new Subject<any>();
     public imgNoData: string = ImagenesUrl.noDataGraficos;
-    public flgEnviarComprobante: boolean;
+
     public disabledSearch: boolean = Flags.False;
 
     public allCategoriaSource: CategoriaDTO[];
@@ -201,6 +201,11 @@ export class RegistroVentasPageComponent implements OnInit, OnDestroy {
             return;
         }
 
+        if (FuseValidators.isEmptyInputValue(idCliente)) {
+            this._toolService.showWarning('Debe seleccionar o registrar un cliente antes de continuar.', DictionaryErrors.Tittle);
+            return;
+        }
+
         if (FuseValidators.isEmptyInputValue(destinationTimeZoneId)) {
             this._toolService.showWarning(DictionaryWarning.InvalidLocalizacion, DictionaryWarning.Tittle);
             return;
@@ -217,7 +222,7 @@ export class RegistroVentasPageComponent implements OnInit, OnDestroy {
         }
 
         this.configForm = this._formBuilder.group({
-            title: 'Confirmación de la Venta',
+            title: 'Confirmación de la Solicitud',
             message: '¿Conforme con los datos ingresados?',
             icon: this._formBuilder.group({
                 show: Flags.True,
@@ -252,7 +257,7 @@ export class RegistroVentasPageComponent implements OnInit, OnDestroy {
             request.lstDetalleVenta = lstDetalleVenta;
             request.notaAdicional = this.notaAdicional;
             request.fechaRegistroVenta = txtFechaRegistroVenta;
-            request.flgEnviarComprobante = this.flgEnviarComprobante;
+            request.flgEnviarComprobante = true;
             this.isCallingInsertService = Flags.Show;
 
             this._ventaService.InsertAsync(request).subscribe((response: ResponseDTO) => {
@@ -320,29 +325,9 @@ export class RegistroVentasPageComponent implements OnInit, OnDestroy {
         });
     }
 
-    onEnviarComprobanteChange(event: Event) {
-        const isChecked = (event.target as HTMLInputElement).checked;
-        if (isChecked) {
-            const cliente = this.clienteData;
-
-            if (!this.hayCliente || !cliente || !cliente.correoElectronico || cliente.correoElectronico.trim() === '') {
-                this._toolService.showWarning(
-                    'Debe seleccionar un cliente con correo válido para enviar el comprobante.',
-                    'Advertencia'
-                );
-                (event.target as HTMLInputElement).checked = Flags.False;
-                this.flgEnviarComprobante = Flags.False;
-                return;
-            }
-        }
-
-        this.flgEnviarComprobante = isChecked;
-    }
-
     quitarCliente(): void {
         this.clienteData = null;
         this.hayCliente = Flags.False;
-        this.flgEnviarComprobante = Flags.False;
     }
 
     getFilterComboConsulta() {

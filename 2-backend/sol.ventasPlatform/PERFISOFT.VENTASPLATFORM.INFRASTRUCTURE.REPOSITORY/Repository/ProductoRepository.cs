@@ -74,7 +74,10 @@ namespace PERFISOFT.VENTASPLATFORM.INFRASTRUCTURE.REPOSITORY.Repository
                 .Where(p => p.ESTADO == Flags.Habilitado &&
                             p.ACTIVO == Flags.Activado &&
                             p.CATEGORIA.ESTADO == Flags.Habilitado &&
-                            p.CATEGORIA.ACTIVO == Flags.Activado)
+                            p.CATEGORIA.ACTIVO == Flags.Activado &&
+                            p.MARCA.ESTADO == Flags.Habilitado &&
+                            p.MARCA.ACTIVO == Flags.Activado
+                            )
                 .GroupBy(p => new { p.CATEGORIA.ID, p.CATEGORIA.NOMBRE })
                 .Select(g => new CategoriaConConteoVO
                 {
@@ -101,7 +104,12 @@ namespace PERFISOFT.VENTASPLATFORM.INFRASTRUCTURE.REPOSITORY.Repository
             var query = All<Producto>()
                 .AsNoTracking()
                 .Where(p => p.ESTADO == Flags.Habilitado &&
-                            p.ACTIVO == Flags.Activado);
+                            p.ACTIVO == Flags.Activado &&
+                            p.CATEGORIA.ESTADO == Flags.Habilitado &&
+                            p.CATEGORIA.ACTIVO == Flags.Activado &&
+                            p.MARCA.ESTADO == Flags.Habilitado &&
+                            p.MARCA.ACTIVO == Flags.Activado
+                            );
 
             if (idCategoria > Numeracion.Cero)
                 query = query.Where(p => p.CATEGORIA.ID == idCategoria);
@@ -128,9 +136,13 @@ namespace PERFISOFT.VENTASPLATFORM.INFRASTRUCTURE.REPOSITORY.Repository
             return await All<Producto>()
                 .AsNoTracking()
                 .Where(u => idsProducto.Contains(u.ID)
+                        && u.ACTIVO == Flags.Activado
                         && u.ESTADO == Flags.Habilitado
                         && u.CATEGORIA.ESTADO == Flags.Habilitado
                         && u.CATEGORIA.ACTIVO == Flags.Activado
+                        && u.MARCA.ESTADO == Flags.Habilitado
+                        && u.MARCA.ACTIVO == Flags.Activado
+
                 )
                 .ToListAsync();
         }

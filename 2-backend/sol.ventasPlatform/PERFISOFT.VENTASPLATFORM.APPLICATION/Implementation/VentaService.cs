@@ -73,6 +73,21 @@ namespace PERFISOFT.VENTASPLATFORM.APPLICATION.Implementation
         public async Task<ResponseDTO> InsertAsync(RegistrarVentaRequest request)
         {
             Log.Information(LogMessages.Venta.InsertAsync.Initial, request.IdUsuarioGuid);
+            
+            if (request.IdCliente is null || request.IdCliente == Numeracion.Cero)
+            {
+                Log.Warning("No se ha ingresado un Cliente para la venta", request.IdUsuarioGuid);
+                return new ResponseDTO
+                {
+                    IdUsuario = request.IdUsuarioGuid,
+                    Code = ErrorCodigo.Advertencia,
+                    Success = Flags.WarningTransaction,
+                    TitleMessage = "¡Advertencia!",
+                    Message = "No se ha ingresado un Cliente para la venta"
+                };
+            }
+
+            request.FlgEnviarComprobante = Flags.True; //2025-10-20 Siempre enviar el correo al cliente
 
             var idUsuario = await GetIdUsuarioByGuid(request.IdUsuarioGuid);
 
